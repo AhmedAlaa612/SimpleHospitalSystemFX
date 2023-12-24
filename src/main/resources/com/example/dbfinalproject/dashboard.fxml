@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<BorderPane prefHeight="666.0" prefWidth="738.0"  xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.dbfinalproject.DashboardController">
+   <center>
+      <TableView fx:id="appTable" prefHeight="305.0" prefWidth="767.0" BorderPane.alignment="CENTER">
+        <columns>
+          <TableColumn fx:id="turn" prefWidth="50.4000244140625" text="Turn" />
+          <TableColumn fx:id="patId" prefWidth="87.20001220703125" text="Patient ID" />
+            <TableColumn fx:id="patName" minWidth="2.4000244140625" prefWidth="174.39996337890625" text="Name" />
+            <TableColumn fx:id="specName" prefWidth="144.79998779296875" text="specialization" />
+            <TableColumn fx:id="docName" prefWidth="117.59994506835938" text="Doctor " />
+            <TableColumn fx:id="docId" prefWidth="72.79998779296875" text="Doctor ID" />
+            <TableColumn fx:id="deleteBtn" prefWidth="119.199951171875" />
+        </columns>
+      </TableView>
+   </center>
+   <top>
+      <AnchorPane prefHeight="320.0" prefWidth="767.0" BorderPane.alignment="CENTER">
+         <children>
+            <AnchorPane layoutX="27.0" layoutY="27.0" prefHeight="162.0" prefWidth="224.0" style="-fx-background-color: #0E86D4; -fx-background-radius: 20;">
+               <children>
+                  <ImageView fitHeight="90.0" fitWidth="94.0" layoutX="7.0" layoutY="6.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@pat.png" />
+                     </image>
+                  </ImageView>
+                  <Text fill="WHITE" layoutX="15.0" layoutY="133.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Patients in Waiting" wrappingWidth="194.93670654296875">
+                     <font>
+                        <Font name="Comic Sans MS" size="20.0" />
+                     </font>
+                  </Text>
+                  <Text fx:id="patCount" fill="WHITE" layoutX="112.0" layoutY="65.0" strokeType="OUTSIDE" strokeWidth="0.0" text="0" textAlignment="CENTER" wrappingWidth="109.8062744140625">
+                     <font>
+                        <Font name="Comic Sans MS Bold" size="44.0" />
+                     </font>
+                  </Text>
+               </children>
+            </AnchorPane>
+            <AnchorPane layoutX="369.0" layoutY="40.0" prefHeight="136.0" prefWidth="322.0" style="-fx-background-color: #21B6A8; -fx-background-radius: 20;" AnchorPane.rightAnchor="47.0">
+               <children>
+                  <Text fill="WHITE" layoutX="11.0" layoutY="27.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Enter next Patient" textAlignment="CENTER" wrappingWidth="299.12139892578125">
+                     <font>
+                        <Font name="Comic Sans MS Bold" size="25.0" />
+                     </font>
+                  </Text>
+                  <ComboBox fx:id="doctorBox" layoutX="14.0" layoutY="78.0" prefHeight="26.0" prefWidth="177.0" promptText="Doctor" style="-fx-background-color: #FFFFFF; -fx-background-radius: 15;" />
+                  <Button layoutX="214.0" layoutY="74.0" mnemonicParsing="false" onAction="#getNextPat" style="-fx-background-color: null; -fx-border-color: #ffffff; -fx-border-width: 3; -fx-border-radius: 15;" text="Get Patient" textFill="#fffefe">
+                     <font>
+                        <Font name="Comic Sans MS" size="13.0" />
+                     </font></Button>
+               </children>
+            </AnchorPane>
+         </children></AnchorPane>
+   </top>
+</BorderPane>

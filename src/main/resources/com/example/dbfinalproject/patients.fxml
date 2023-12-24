@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="528.0" prefWidth="611.0" xmlns:fx="http://javafx.com/fxml/1"  fx:controller="com.example.dbfinalproject.PatientsController">
+   <top>
+      <AnchorPane prefHeight="211.0" prefWidth="611.0" BorderPane.alignment="CENTER">
+         <children>
+            <Text layoutX="214.0" layoutY="39.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Patients" textAlignment="CENTER" wrappingWidth="182.290283203125">
+               <font>
+                  <Font name="Comic Sans MS" size="23.0" />
+               </font>
+            </Text>
+            <TextField fx:id="searchField" layoutX="98.0" layoutY="143.0" prefHeight="26.0" prefWidth="215.0" />
+            <Label layoutX="14.0" layoutY="142.0" prefHeight="21.0" prefWidth="82.0" text="Search" textAlignment="CENTER">
+               <font>
+                  <Font name="Comic Sans MS" size="19.0" />
+               </font>
+            </Label>
+            <Button layoutX="418.0" layoutY="136.0" mnemonicParsing="false" onAction="#addPat" prefHeight="34.0" prefWidth="155.0" style="-fx-background-color: null; -fx-border-color: #808080; -fx-border-radius: 15; -fx-border-width: 3;" text="Add new patient">
+               <font>
+                  <Font name="Comic Sans MS" size="16.0" />
+               </font>
+            </Button>
+         </children>
+      </AnchorPane>
+   </top>
+   <center>
+      <TableView fx:id="patTable" prefHeight="309.0" prefWidth="611.0" BorderPane.alignment="CENTER">
+         <columns>
+            <TableColumn fx:id="patId" prefWidth="54.400022864341736" text="ID" />
+            <TableColumn fx:id="patFname" minWidth="1.60003662109375" prefWidth="76.00000762939453" text="First name" />
+            <TableColumn fx:id="patLname" prefWidth="90.4000244140625" text="Last Name" />
+            <TableColumn fx:id="patPhone" prefWidth="130.39996337890625" text="Phone Number" />
+            <TableColumn fx:id="patAge" minWidth="7.199951171875" prefWidth="48.0" text="Age" />
+            <TableColumn fx:id="patGender" prefWidth="65.60003662109375" text="Gender" />
+            <TableColumn fx:id="patBirthdate" prefWidth="82.39999389648438" text="Birthdate" />
+            <TableColumn fx:id="deleteBtn" prefWidth="61.5999755859375" />
+         </columns>
+      </TableView>
+   </center>
+</BorderPane>
