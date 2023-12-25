@@ -136,7 +136,7 @@ public class DashboardController implements Initializable {
         }
         try {
             Connection con = new DatabaseConnection().getConnection();
-            String sql = "DELETE FROM appointments where doc_id = ? order by stat_id, id  LIMIT 1";
+            String sql = "DELETE FROM appointments where doc_id = ? order by stat_id desc, id  LIMIT 1";
             PreparedStatement ps = con.prepareStatement(sql);
             ps.setInt(1, doc.getId());
             int affectedRows = ps.executeUpdate();
@@ -155,7 +155,7 @@ public class DashboardController implements Initializable {
     private void refreshTable(){
         appList.clear();
         try{
-            String sql = "SELECT * FROM appointments INNER JOIN patient ON appointments.pat_id = patient.pat_id INNER JOIN doctor ON appointments.doc_id = doctor.id INNER JOIN specialization ON doctor.spec_id = specialization.spec_id order by stat_id desc, id";
+            String sql = "SELECT * FROM appointments INNER JOIN patient ON appointments.pat_id = patient.pat_id INNER JOIN doctor ON appointments.doc_id = doctor.id INNER JOIN specialization ON doctor.spec_id = specialization.spec_id order by appointments.stat_id desc, appointments.id";
             Connection con = new DatabaseConnection().getConnection();
             PreparedStatement ps = con.prepareStatement(sql);
             ResultSet rs = ps.executeQuery();
