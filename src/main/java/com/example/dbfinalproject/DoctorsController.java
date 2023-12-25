@@ -41,7 +41,7 @@ public class DoctorsController implements Initializable {
             PreparedStatement ps = con.prepareStatement(sql);
             ResultSet rs = ps.executeQuery();
             while(rs.next()){
-                Doctor newDoc = new Doctor(rs.getInt(1), rs.getString(2), rs.getString(3), rs.getString(8), rs.getInt(7), rs.getString(4), rs.getInt(5));
+                Doctor newDoc= new Doctor(rs.getInt(1), rs.getString(2), rs.getString(3), rs.getString(8), rs.getInt(5), rs.getString(6), rs.getInt(4));
                 DoctorList.add(newDoc);
             }
             con.close();
