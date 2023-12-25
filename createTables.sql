@@ -40,4 +40,4 @@ create table appointments(
 insert into p_status
 values	(0, 'Normal'),
 		(1, 'Urgent'),
-        (2, 'Super Urgent');
+        (2, 'emergency');
